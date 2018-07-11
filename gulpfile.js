@@ -58,7 +58,7 @@ gulp.task('img', function(){
 
 
 // src 配下の *.html, *.css ファイルが変更されたリロード。
-gulp.task('default', ['browser-sync','sass','ejs', 'img'], function () {
+gulp.task('default', ['browser-sync','sass','ejs'], function () {
   gulp.watch('assets/**/*.sass', ['sass','bs-reload']);
   gulp.watch('assets/**/*.ejs', ['ejs','bs-reload']);
  // gulp.watch(["監視したいファイル"], ["行いたいタスク"])

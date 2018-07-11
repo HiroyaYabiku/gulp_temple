@@ -1,11 +1,15 @@
-$mainColor: #bbb
-$fontsize-base: 14px
+@import "var/_all"
+@import "base/_all"
 
-body
-  color: $mainColor
-  font-size: $fontsize-base
-  font-weight: bold
+
+body p
+  color: #ccc
+  font-family: $font_family
+  font-size: $fs_def
+  line-height: $lh_def
+  @include sp
+    color: $color_main
+    font-size: $fs_def_sp
 
 p
-  line-height: 2
   letter-spacing: .1em
