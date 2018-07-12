@@ -8,7 +8,7 @@ var plumber = require('gulp-plumber');
 var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var del = require("del");
-
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('clean', function(){
   del(['dist'])
@@ -36,6 +36,10 @@ gulp.task('sass', function(){
     }))
     .pipe(sass())
     .pipe(cleanCSS())
+    .pipe(autoprefixer({
+        browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
+        cascade: false
+    }))
     .pipe(gulp.dest('dist/css'));
 });
 
