@@ -1,6 +1,7 @@
 @import "var/_all"
 @import "function/_all"
 @import "base/_all"
+@import "layout/_all"
 @import "module/_all"
 @import "class/_all"
 
@@ -13,5 +14,14 @@ body p
     color: $color_main
     font-size: $fs_def_sp
 
+.wrapper
+  margin: 0 20px
+
 p
+  position: relative
+  margin-bottom: 20px
   letter-spacing: .1em
+  &:after
+    @include afterContent(10px, 10px, 10px, 10px, 10px, 10px)
+    margin: auto
+    background: $color_main

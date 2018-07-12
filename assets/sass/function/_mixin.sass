@@ -2,18 +2,48 @@
 /*  mixin
 /* ----------------- */
 
-$pc: 1000px; // PC
-$tab: 800px; // タブレット
-$sp: 750px;  // スマホ
+/* ------------------------------------ */
+//  レスポポンシブ対応（ブレイクポイント）
+/* ------------------------------------ */
+
+$pc: 1000px // PC
+$tab: 800px // タブレット
+$sp: 750px  // スマホ
 
 @mixin pc
   @media (max-width: ($pc))
-    @content;
+    @content
 
 @mixin tab
   @media (max-width: ($tab))
-    @content;
+    @content
 
 @mixin sp
   @media (max-width: ($sp))
-    @content;
+    @content
+
+
+
+/* ------------------------------------ */
+//  関数
+/* ------------------------------------ */
+
+@mixin beforeContent($top,$right,$bottom,$left,$widh,$height)
+  position: absolute
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  width: $widh
+  height: $height
+  content: ""
+
+@mixin afterContent($top,$right,$bottom,$left,$widh,$height)
+  position: absolute
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  width: $widh
+  height: $height
+  content: ""
